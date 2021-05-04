@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+    // use router instead of location to reset history
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  startOver() {
+      this.router.navigateByUrl("/");
   }
 
 }
